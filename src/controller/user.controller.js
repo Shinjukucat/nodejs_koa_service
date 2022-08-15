@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 
 const {JWT_KEY} = require('../config/config_default')
 
-const {createUser, getUserInfo} =  require('../service/user.service')
+const {createUser, getUserInfo, updataPasswordById} =  require('../service/user.service')
 const {userRegisterError} = require('../constant/err.type')
 class UserController {
   // 注册
@@ -56,6 +56,39 @@ class UserController {
     }
     // ctx.response.body = `欢饮回来 ${user_name}`
   }
+
+  // 用户修改密码的接口
+  async changePassword(ctx, next) {
+  // 1. 获取用户数据
+  const id = ctx.state.user.id
+  const password = ctx.request.body.password
+
+  // 2. 操作数据库
+  try {
+    // 这里传入的id用来作为搜索条件，password就是用户输入的新密码
+    const res = await updataPasswordById({id, password})
+    // console.log(id, password)
+    if(res) {
+      ctx.response.body = {
+        code: 0,
+        message: '修改密码成功',
+        result: ''
+      }
+    } else {
+      ctx.response.body = {
+        code: '10007',
+        message: '修改密码失败',
+        result: ''
+      }
+    }
+  } catch (error) {
+    ctx.response.body = {
+      message: '修改密码请求发送失败'
+    }
+  }
+
+  // 3. 返回结果
+}
 }
 
 module.exports = new UserController()

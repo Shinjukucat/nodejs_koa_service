@@ -31,7 +31,26 @@ class UserService {
     } catch (error) {
       return null
     }
-  } 
+  }
+
+  // 修改密码  
+  async updataPasswordById({id, user_name, password, is_admin}) {
+    const whereOpt = {id}
+    const newUser = {}
+
+    // 这里对象里都是简写形式，传入的是 user_name: user_name， password: password
+    user_name && Object.assign(newUser, {user_name})
+    password && Object.assign(newUser, {password})
+    is_admin && Object.assign(newUser, {is_admin})
+
+    try {
+      const res = await User.update(newUser, {where: whereOpt})
+      // console.log(res)
+      return res > 0 ? true : false
+    } catch (error) {
+      return null
+    }
+  }
 }
 
 // 虽然是类，但是以对象形式导出
