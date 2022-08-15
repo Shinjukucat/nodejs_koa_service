@@ -12,6 +12,8 @@ const app = new Koa()
 
 // 使用了koa-body后，请求体里面的内容就会添加到 ctx.request.body，因为koa自身并具备这个功能
 app.use(koaBody())
+
+// 添加路由的中间件
 app.use(userRouter.routes())
 
 // 统一错误处理

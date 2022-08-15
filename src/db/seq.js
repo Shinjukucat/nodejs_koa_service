@@ -6,6 +6,7 @@ const {MYSQL_HOST,
   MYSQL_PWD,
   MYSQL_DB} = require('../config/config_default')
 
+// 连接到数据库
 const seq = new Sequelize(MYSQL_DB, MYSQL_USER, MYSQL_PWD, {
   host: MYSQL_HOST,
   dialect: 'mysql'

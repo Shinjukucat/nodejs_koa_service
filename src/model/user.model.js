@@ -2,7 +2,7 @@ const {DataTypes} = require('sequelize')
 
 const seq = require('../db/seq')
 
-// 创建模型(Model zd_user -> zd_users，将下面的模型创建到数据库中)
+// 创建模型(Model zd_user -> zd_users，将下面的模型创建到数据库中)，sequelize中模型就是数据表的抽象表示
 const User = seq.define('zd_user', {
   // id 会被sequelize自动创建，管理
   user_name: {
