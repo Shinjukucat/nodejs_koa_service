@@ -1,5 +1,6 @@
 const {DataTypes} = require('sequelize')
 
+// 导入数据库连接
 const seq = require('../db/seq')
 
 // 创建模型(Model zd_user -> zd_users，将下面的模型创建到数据库中)，sequelize中模型就是数据表的抽象表示
