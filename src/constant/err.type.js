@@ -96,7 +96,12 @@ module.exports = {
   },
   addressFormateError: {
     code: '10401',
-    message: '更新购物车列表失败',
+    message: '地址参数格式错误',
+    result: ''
+  },
+  orderFormateError: {
+    code: '10501',
+    message: '订单参数格式错误',
     result: ''
   }
 }
