@@ -93,5 +93,10 @@ module.exports = {
     code: '10305',
     message: '更新购物车列表失败',
     result: ''
+  },
+  addressFormateError: {
+    code: '10401',
+    message: '更新购物车列表失败',
+    result: ''
   }
 }
