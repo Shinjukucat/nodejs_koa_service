@@ -68,5 +68,30 @@ module.exports = {
     code: '10205',
     message: '无效的商品id',
     result: ''
+  },
+  addCartError: {
+    code: '10301',
+    message: '添加购物车失败',
+    result: ''
+  },
+  getCartError: {
+    code: '10302',
+    message: '获取购物车列表失败',
+    result: ''
+  },
+  cartFormatError: {
+    code: '10303',
+    message: '购物车数据格式错误',
+    result: ''
+  },
+  updataParamsError: {
+    code: '10304',
+    message: 'number和selected不能同时为空',
+    result: ''
+  },
+  updataCartError: {
+    code: '10305',
+    message: '更新购物车列表失败',
+    result: ''
   }
 }

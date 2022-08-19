@@ -1,7 +1,9 @@
 const Router = require('koa-router')
 const router = new Router({prefix: '/goods'})
 
+// 控制器
 const {upload, release, edit, remove, restore, findAll} = require('../controller/goods.controller')
+// 中间件
 const {auth, haveAdminPermission} = require('../middleware/auth.middleware')
 const {validator} = require('../middleware/goods.middleware')
 

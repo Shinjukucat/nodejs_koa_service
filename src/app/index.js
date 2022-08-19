@@ -24,7 +24,8 @@ app.use(koaBody({
     uploadDir: path.join(__dirname, '../upload'),
     // 是否保存文件的扩展名
     keepExtensions: true,
-  }
+  },
+  parsedMethods: ['POST', 'GET', 'PATCH', 'DELETE']
 }))
 // koa-static插件的使用  将koaStatic里面配置的文件路径文件夹里面的资源设置为静态资源，使得前端可以访问查看到上传的图片
 app.use(koaStatic(path.join(__dirname, '../upload')))
